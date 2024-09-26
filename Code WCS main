@@ -1,0 +1,86 @@
+clear all; clc; close all; 
+mem_before = memory;
+I0=imread('GT SIGNATURE 1.bmp');
+% imshow(I0);
+I1=imread('signature 1-15.bmp');
+% [R1,c1,r1]=fdescf(I1);
+% ff1=R1(1); %R1(1)=0;
+% figure,stem(r1); title({'centroide: ',num2str(c1)})
+
+I2=imread('signature 1-15.bmp');
+
+m = imread('signature 1-15.bmp');
+% imshow(m);
+I = rgb2gray(m);
+figure;
+% imshow(I);
+p=imcontour(I,1.5,'b');
+title('Sg1-15', 'FontSize', 15);
+
+% I2=rgb2gray(I2);
+% [R2,c2,r2]=fdescf(I2);
+% ff2=R2(1); %R2(1)=0;
+% figure,stem(r2); title({'centroide: ',num2str(c2)})
+% 
+% figure ,
+% subplot 121,stem(r1); title({'GT curve Fourier spectrum: ',num2str(c1)});
+% xlabel('Puntos');
+% ylabel('Frecuencia Hz');
+% subplot 122,stem(r2); title({'Fourier spectrum for Aluminium curve SG1-8: ',num2str(c2)});
+% xlabel('Puntos');
+% ylabel('Frecuencia Hz');
+% % Mostrar centroides 
+% % Mostrar centroides 
+% % Mostrar descriptores de Fourier
+% figure ,
+% subplot 211,stem(r1); title('GT curve Fourier spectrum')
+% xlabel('Points');
+% ylabel('Frequency Hz');
+% subplot 212,stem(r2); title('Fourier spectrum for Aluminium curve SG1-8')
+% xlabel('Points');
+% ylabel('Frequency Hz');
+% c = 1; % Puedes ajustar este valor según tus necesidades
+% R11 = c * log(1 + double(R1));
+% R12 = c * log(1 + double(R2));
+% % Mostrar descriptores de Fourier
+% figure,
+% subplot 211,stem(R11); title('DF Ground Truth geometría circular');
+% subplot 212,stem(R12); title('DF Pieza Aluminio-9 geomtría circular');
+% 
+% r=abs(r2-r1);
+% figure,stem(r); title({'Third Signal: Curve profile SG1-8 '});
+% xlabel('Points');
+% ylabel('Frequency Hz');
+% % S=mean(R)
+% tStart = cputime;
+% pause(1)
+% tEnd = cputime - tStart
+% tic
+% pause(1)
+% toc
+% valor_en_posicion_107 = r(107);
+% 
+% senal_en_el_tiempo=ifft(r);
+% plot(abs(senal_en_el_tiempo));
+% title('señal en el dominio del tiempo');
+% xlabel('Muestras');
+% ylabel('Amplitud');
+% 
+% 
+% Delta_x=(c2(1)-c1(1));
+% Delta_y=(c2(2)-c1(2));
+% 
+% % matriz afin
+% affine_matriz= [1, 0, Delta_x; 0, 1, Delta_y];
+% P_G=[107;480;1];
+% 
+% % aplicar matriz afin
+% 
+% P_W= affine_matriz*P_G;
+% 
+% disp(['coordenadas del nuevo punto WCS: (' num2str(P_W(1)/6.299) ', ' num2str(P_W(2)/6.299) ')']);
+% 
+% WCS=((P_W)/6.299)';
+% 
+% mem_after = memory;
+% memory_used = mem_after.MemUsedMATLAB - mem_before.MemUsedMATLAB;
