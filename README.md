@@ -1,4 +1,4 @@
-The thesis presented here describes the development of a new method for locating the work coordinate
+The proyect presented here describes the development of a new method for locating the work coordinate
 system (WCS) in 3-axis CNC milling machines using artificial vision, with the goal of improving
 the repeatability of the workpiece zero setup process. The process begins with capturing images of pieces
 with different geometric shapes placed on the machine’s worktable by the user. A camera mounted
